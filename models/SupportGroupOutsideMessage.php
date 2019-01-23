@@ -30,6 +30,11 @@ class SupportGroupOutsideMessage extends \yii\db\ActiveRecord
         return 'support_group_outside_message';
     }
 
+    public static function getDb()
+    {
+        return Yii::$app->get('dbEmoji');
+    }
+
     /**
      * {@inheritdoc}
      */

@@ -407,7 +407,7 @@ class BotHandler extends BotApi
     public function saveOutsideMessage()
     {
 
-        $text = $this->cleanEmoji(trim($this->getMessage()->getText()));
+        $text = trim($this->getMessage()->getText());
 
         if (mb_strlen($text) == 0) {
             return false;
@@ -423,14 +423,5 @@ class BotHandler extends BotApi
         ]);
 
         return $model->save();
-    }
-
-    /**
-     * @param string $text
-     * @return string
-     */
-    protected function cleanEmoji($text)
-    {
-        return preg_replace('/[[:^print:]]/', '', $text);
     }
 }

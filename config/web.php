@@ -120,6 +120,7 @@ $config = [
             'statusCode' => 503,
         ],
         'db' => $db,
+        'dbEmoji' => \yii\helpers\ArrayHelper::merge($db, ['charset' => 'utf8mb4']),
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
